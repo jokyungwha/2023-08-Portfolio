@@ -44,19 +44,6 @@
             $(".popups").hide();            
         });
         
-        const cursorRounded =$('cursor');
-        
-        $(window).mousemove(function(e){
-            $('.cursor').css('left',e.clientX);
-            $('.cursor').css('top',e.clientY);
-        })
-        // $('.cursor').mousedown(function(){
-        //     $(this).css('display','none');
-        // })
-        // $('.cursor').mouseup(function(){
-        //     $(this).css('display','block');
-        // })
-
       });
     </script>
 
@@ -64,6 +51,7 @@
     <style>
         
         :root{
+            cursor: url('./icon/cursor.svg'), auto;
             font-family: 'NanumSquare',sans-serif;
             font-weight: 400;
             font-size: 22px;
@@ -71,8 +59,7 @@
             color:#fff;
             text-transform: uppercase;
             background: #000;
-        }
-       
+        }       
         #wrap{            
             overflow: hidden;
         }
@@ -428,9 +415,9 @@
             position: absolute;
             right: 10px;
             top:10px;
-            background:#000;
-            width:30px;
-            height:30px;
+            background:#333;
+            width:22px;
+            height:22px;
             font-size: 20px;
             font-weight: 900;
             border-radius:50%;
@@ -438,7 +425,6 @@
             justify-content: center;
             align-items: center;
         }
-        
 
         /* footer */
         #footer p{
@@ -449,13 +435,6 @@
             text-align: center;
             padding: 30px 0;
         }
-        .cursor{
-            position:fixed;
-            transform:translate(-50%,-50%);
-            width:32px;    
-            z-index:999999;        
-        }
-
         /* home mouse move */
         @keyframes mmove{
             0%{
@@ -606,6 +585,11 @@
                 font-size: 28px;
                 line-height: 38px;
                 padding: 50px 0;
+            }
+            .popups .close{
+                width:40px;
+                height:40px;
+                font-size: 30px;
             }
 
         }
@@ -779,6 +763,11 @@
                 overflow: hidden;
                 display: none;
             }
+            .popups .close{
+                width:50px;
+                height:50px;
+                font-size: 40px;
+            }            
         }
         /* 최대 사이즈 제한 */
         @media (min-width:1340px){
@@ -1008,9 +997,6 @@
             <img src="./images/brochure.jpg" alt="브로슈어 디자인">
             <div class="close">×</div>
         </div>
-    </div>
-    <div class="cursor">
-        <img src="./icon/cursor.png" alt="커서1">
     </div>
 </body>
 </html>
