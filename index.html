@@ -44,11 +44,25 @@
             $(".popups").hide();            
         });
         
+        const cursorRounded =$('cursor');
+        
+        $(window).mousemove(function(e){
+            $('.cursor').css('left',e.clientX);
+            $('.cursor').css('top',e.clientY);
+        })
+        // $('.cursor').mousedown(function(){
+        //     $(this).css('display','none');
+        // })
+        // $('.cursor').mouseup(function(){
+        //     $(this).css('display','block');
+        // })
+
       });
     </script>
 
     <title>WEB PUBLISHER 조경화 포트폴리오</title>
     <style>
+        
         :root{
             font-family: 'NanumSquare',sans-serif;
             font-weight: 400;
@@ -58,13 +72,13 @@
             text-transform: uppercase;
             background: #000;
         }
-        #wrap{
+       
+        #wrap{            
             overflow: hidden;
         }
         .sec{
             margin-bottom: 140px;
         }
-        
         /* header */
         #header{
             position: fixed;
@@ -283,6 +297,11 @@
             width: 12px;
             height: 12px;
         }
+        .swiper-pagination{            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         /* design */        
         #design{
@@ -407,16 +426,17 @@
         }
         .popups .close{
             position: absolute;
-            right: 0;
-            top:0;
+            right: 10px;
+            top:10px;
             background:#000;
-            width:68px;
-            height: 68px;
-            font-size: 50px;
+            width:30px;
+            height:30px;
+            font-size: 20px;
             font-weight: 900;
             border-radius:50%;
-            text-align: center;
-            line-height: 68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
 
@@ -428,6 +448,12 @@
             line-height: 16px;
             text-align: center;
             padding: 30px 0;
+        }
+        .cursor{
+            position:fixed;
+            transform:translate(-50%,-50%);
+            width:32px;    
+            z-index:999999;        
         }
 
         /* home mouse move */
@@ -763,6 +789,7 @@
     </style>
 </head>
 <body>
+    <div class="cursor"></div>
     <section id="wrap">
         <header id="header">
             <div class="container">
@@ -835,7 +862,14 @@
                 <ul class="sliders slider swiper-wrapper">
                     <li class="slide slider01 megabox swiper-slide">
                         <h3>megabox</h3>
-                        <div class="img-box"><img src="./images/meag-box-t.png" alt="메가박스"></div>
+                        <div class="img-box">
+                            <picture>
+                                <source media="(min-width:1200px )" srcset="./images/meag-box-pc.png">
+                                <source media="(min-width:768px )" srcset="./images/meag-box-t.png">
+                                <img src="./images/meag-box-m.png" alt="메가박스">
+                            </picture>
+                            
+                        </div>
                         <div class="slider-txt">
                             <p>MEGABOX</p>
                             <p>영화 관람 사이트 리뉴얼<br>(포트폴리오용)</p>
@@ -844,7 +878,13 @@
                     </li>
                     <li class="slide slider02 hana swiper-slide">
                         <h3>하나성형외과</h3>
-                        <div class="img-box"><img src="./images/hana-t.png" alt="하나성형외과"></div>
+                        <div class="img-box">
+                            <picture>
+                                <source media="(min-width:1200px )" srcset="./images/hana-pc.png">
+                                <source media="(min-width:768px )" srcset="./images/hana-t.png">
+                                <img src="./images/hana-m.png" alt="하나성형외과">
+                            </picture>
+                        </div>
                         <div class="slider-txt">
                             <p>하나성형외과</p>
                             <p>성형외과 사이트<br>(포트폴리오용)</p>
@@ -853,7 +893,13 @@
                     </li>
                     <li class="slide slider03 mozilla swiper-slide">
                         <h3>Mozilla</h3>
-                        <div class="img-box"><img src="./images/mozilla-t.png" alt="모질라"></div>
+                        <div class="img-box">
+                            <picture>
+                                <source media="(min-width:1200px )" srcset="./images/mozilla-pc.png">
+                                <source media="(min-width:768px )" srcset="./images/mozilla-t.png">
+                                <img src="./images/mozilla-m.png" alt="모질라">
+                            </picture>                            
+                        </div>
                         <div class="slider-txt">
                             <p>Mozilla</p>
                             <p>Mozilla 사이트<br>(포트폴리오용)</p>
@@ -862,7 +908,13 @@
                     </li>
                     <li class="slide slider04 hana swiper-slide">
                         <h3>INDIGO</h3>
-                        <div class="img-box"><img src="./images/indigo-t.png" alt="indigo"></div>
+                        <div class="img-box">
+                            <picture>
+                                <source media="(min-width:1200px )" srcset="./images/indigo-pc.png">
+                                <source media="(min-width:768px )" srcset="./images/indigo-t.png">
+                                <img src="./images/indigo-m.png" alt="indigo">
+                            </picture>                           
+                        </div>
                         <div class="slider-txt">
                             <p>INDIGO</p>
                             <p>INDIGO 사이트<br>(포트폴리오용)</p>
@@ -871,7 +923,12 @@
                     </li>
                     <li class="slide slider05 tourist swiper-slide">
                         <h3>tourist</h3>
-                        <div class="img-box"><img src="./images/tourist-t.png" alt="투어리스트"></div>
+                        <div class="img-box">
+                            <picture>
+                                <source media="(min-width:1200px )" srcset="./images/tourist-pc.png">
+                                <source media="(min-width:768px )" srcset="./images/tourist-t.png">
+                                <img src="./images/tourist-t.png" alt="투어리스트"></div>
+                            </picture>                            
                         <div class="slider-txt">
                             <p>Tourist</p>
                             <p>Tourist 사이트<br>(포트폴리오용)</p>
@@ -938,16 +995,22 @@
     </section>
     <!-- 팝업 -->
     <div class="popups">       
-        <div class="close">×</div>
+       
         <div class="popimg-box pop01">
             <img src="./images/CD.png" alt="CD 자켓 디자인">
+            <div class="close">×</div>
         </div>
         <div class="popimg-box pop02">
             <img src="./images/banner.png" alt="여름 배너 디자인">
+            <div class="close">×</div>
         </div>
         <div class="popimg-box pop03">
             <img src="./images/brochure.jpg" alt="브로슈어 디자인">
+            <div class="close">×</div>
         </div>
+    </div>
+    <div class="cursor">
+        <img src="./icon/cursor.png" alt="커서1">
     </div>
 </body>
 </html>
