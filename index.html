@@ -6,15 +6,23 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- 슬라이드 플러그인 -->
     <script>
       $(document).ready(function(){
         
-        $(".slider").bxSlider();
+        
+        const swiper = new Swiper('.swiper',{
+            slidesPerView: 1,
+            spaceBetween: 50,
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
 
         $('#design .img-box').mouseover(function(){
             // 모든 디자인의 이미지박스 이후에 내용은 닫는다
@@ -64,8 +72,8 @@
             left: 0;
             right: 0;
             z-index: 900;
-            background:#191919;
-            font-size: 9px;
+            background:#222;
+            font-size: 10px;
             font-weight: 900;
         }
         #header h1{
@@ -225,29 +233,8 @@
         #portfolio h2{
             display:none;
         }
-        .bx-wrapper {
-            -moz-box-shadow:none;
-            -webkit-box-shadow:none;
-            box-shadow:none;
-            border:none;
-            background: none;
-        }
-        .bx-controls-direction{
-            display: none;
-        }
-        .bx-wrapper .bx-pager.bx-default-pager a{
-            background:#fff;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-        .bx-wrapper .bx-pager.bx-default-pager a.active{
-            background:#c9f;
-            width: 10px;
-            height: 10px;
-        }
-        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
-            bottom: -40px;
+        #portfolio .container{
+            padding-bottom: 10%;
         }
         .slide{
             display: flex;
@@ -284,6 +271,18 @@
         .slide h3{
             display: none;
         }
+        .swiper-pagination-bullet{
+            background: #fff;
+            opacity: 1;
+            width: 8px;
+            height: 8px;
+            --swiper-pagination-bullet-horizontal-gap: 6px;
+        }
+        .swiper-pagination-bullet-active{
+            background: #c9f;
+            width: 12px;
+            height: 12px;
+        }
 
         /* design */        
         #design{
@@ -291,9 +290,6 @@
         }
         #design h2{
             display:none;
-        }
-        #design .container{
-            margin-top: 60px;
         }
         .dei{
             display: grid;
@@ -698,7 +694,10 @@
                 font-size: 23px;
                 margin-top: 20px;
                 margin-left: 0;
-            }      
+            }            
+            .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+                height: 25%;
+            }
             #design .container h3{
                 font-size: 55px;
                 margin-top: 67px;
@@ -831,55 +830,57 @@
             </div>
         </section>
         <section class="sec" id="portfolio">
-            <div class="container">
+            <div class="container swiper">
                 <h2>portfolio</h2>
-                <ul class="sliders slider">
-                    <li class="slide slider01 megabox">
+                <ul class="sliders slider swiper-wrapper">
+                    <li class="slide slider01 megabox swiper-slide">
                         <h3>megabox</h3>
-                        <div class="img-box"><img src="./images/meag-box.png" alt="메가박스"></div>
+                        <div class="img-box"><img src="./images/meag-box-t.png" alt="메가박스"></div>
                         <div class="slider-txt">
                             <p>MEGABOX</p>
                             <p>영화 관람 사이트 리뉴얼<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/mega-box" target="_blank">사이트 바로가기</a></button>
                         </div>
                     </li>
-                    <li class="slide slider02 hana">
+                    <li class="slide slider02 hana swiper-slide">
                         <h3>하나성형외과</h3>
-                        <div class="img-box"><img src="./images/hana.png" alt="하나성형외과"></div>
+                        <div class="img-box"><img src="./images/hana-t.png" alt="하나성형외과"></div>
                         <div class="slider-txt">
                             <p>하나성형외과</p>
                             <p>성형외과 사이트<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/hana" target="_blank">사이트 바로가기</a></button>
                         </div>
                     </li>
-                    <li class="slide slider03 mozilla">
+                    <li class="slide slider03 mozilla swiper-slide">
                         <h3>Mozilla</h3>
-                        <div class="img-box"><img src="./images/mozilla.png" alt="모질라"></div>
+                        <div class="img-box"><img src="./images/mozilla-t.png" alt="모질라"></div>
                         <div class="slider-txt">
                             <p>Mozilla</p>
                             <p>Mozilla 사이트<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/mozilla" target="_blank">사이트 바로가기</a></button>
                         </div>
                     </li>
-                    <li class="slide slider04 hana">
+                    <li class="slide slider04 hana swiper-slide">
                         <h3>INDIGO</h3>
-                        <div class="img-box"><img src="./images/indigo.png" alt="indigo"></div>
+                        <div class="img-box"><img src="./images/indigo-t.png" alt="indigo"></div>
                         <div class="slider-txt">
                             <p>INDIGO</p>
                             <p>INDIGO 사이트<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/indigo" target="_blank">사이트 바로가기</a></button>
                         </div>
                     </li>
-                    <li class="slide slider05 tourist">
+                    <li class="slide slider05 tourist swiper-slide">
                         <h3>tourist</h3>
-                        <div class="img-box"><img src="./images/tourist.png" alt="투어리스트"></div>
+                        <div class="img-box"><img src="./images/tourist-t.png" alt="투어리스트"></div>
                         <div class="slider-txt">
                             <p>Tourist</p>
                             <p>Tourist 사이트<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/tourist" target="_blank">사이트 바로가기</a></button>
                         </div>
                     </li>
-                </ul>                
+                </ul> 
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>               
             </div>
         </section>
         <section class="sec" id="design">
