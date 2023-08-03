@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- Swiper slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- Swiper slider -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- 슬라이드 플러그인 -->
     <script>
       $(document).ready(function(){
         
+        // AOS
+        AOS.init();
         
+
         const swiper = new Swiper('.swiper',{
             slidesPerView: 1,
             spaceBetween: 50,
@@ -109,7 +120,7 @@
             position: absolute;
             right: 46px ;
             top:-159px;
-            text-transform: none;
+            text-transform: none;            
         }
         #home span{
             font-weight: 900;
@@ -119,7 +130,7 @@
             font-size:50px;
             text-align:center;     
             line-height:60px;
-            margin-bottom:10px;      
+            margin-bottom:10px;
         }
         .mouse{
             position: relative;
@@ -780,7 +791,9 @@
 <body>
     <div class="cursor"></div>
     <section id="wrap">
-        <header id="header">
+        <header id="header"div data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="500">
             <div class="container">
                 <h1>WEB PUBLISHER:::조경화 포트폴리오</h1>
                 <nav>
@@ -798,9 +811,15 @@
         <section id="home">
            <div class="container">
             <h2>home</h2>
-            <p>Jo GyeonghwaCho<span> PORTFOLIO VOL.1</span></p>
-            <p>WEB<br>PUBLISHER</p>
-            <div class="mouse">
+            <p div data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500">Jo GyeonghwaCho<span> PORTFOLIO VOL.1</span></p>
+            <p div data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="500">WEB<br>PUBLISHER</p>
+            <div class="mouse" div data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="500">
                 <div class="box"></div>
             </div>
            </div>
@@ -808,13 +827,13 @@
         <section class="sec" id="about">
             <div class="container">
                 <h2>about</h2>
-                <div class="img-box"><img src="./images/me01.jpg" alt="me01"></div>                
+                <div class="img-box" data-aos="fade-right" data-aos-duration="500"><img src="./images/me01.jpg" alt="me01"></div>                
                 <div class="contents">
-                    <article>
+                    <article data-aos="fade-left" data-aos-duration="500"  data-aos-delay="500">
                         <h3>Profile</h3>
                         <p>울창한 나무같은 사람이 되어 좋은 영향력으로<br>넓게 가지를 뻗어가고 싶은 웹 퍼블리셔 조경화입니다.</p>
                     </article>
-                    <article>
+                    <article data-aos="fade-left" data-aos-duration="500"  data-aos-delay="1000">
                         <h3>Experiences</h3>
                         <p>21.06 ~ 22.12 철물마트에서 Web Designer 근무<br>23.03 ~ 23.08 반응형 웹디자인&웹퍼블리셔 교육 수료</p>
                     </article>
@@ -825,23 +844,21 @@
             <div class="container">
                     <h2>skills</h2>
                     <article>
-                        <h3>i can do</h3>
+                        <h3 data-aos="zoom-out-up">i can do</h3>
                         <ul class="icons-can">
-                            <li><img src="./icon/html.png" alt="html"></li>
-                            <li><img src="./icon/css.png" alt="css"></li>
-                            <li><img src="./icon/js.png" alt="js"></li>
-                            <li><img src="./icon/jquery.png" alt="jquery"></li>
+                            <li data-aos="zoom-out-right"><img src="./icon/html.png" alt="html"></li>
+                            <li data-aos="zoom-out-left"><img src="./icon/css.png" alt="css"></li>
+                            <li data-aos="zoom-out-right"><img src="./icon/js.png" alt="js"></li>
+                            <li data-aos="zoom-out-left"><img src="./icon/jquery.png" alt="jquery"></li>
                         </ul>
                     </article>            
                     <article>
-
-                        <h3>and i can do too</h3>
+                        <h3 data-aos="zoom-out-up">and i can do too</h3>
                         <ul class="icons-too">
-                            <li><img src="./icon/VSC.png" alt="vsc"></li>
-                            <li><img src="./icon/PS.png" alt="ps"></li>
-                            <li><img src="./icon/AI.png" alt="ai"></li>
+                            <li data-aos="zoom-out-right"><img src="./icon/VSC.png" alt="vsc"></li>
+                            <li data-aos="zoom-out-left"><img src="./icon/PS.png" alt="ps"></li>
+                            <li data-aos="zoom-out-right"><img src="./icon/AI.png" alt="ai"></li>
                         </ul>
-
                     </article>
             </div>
         </section>
@@ -851,15 +868,14 @@
                 <ul class="sliders slider swiper-wrapper">
                     <li class="slide slider01 megabox swiper-slide">
                         <h3>megabox</h3>
-                        <div class="img-box">
+                        <div class="img-box" data-aos="fade-right">
                             <picture>
                                 <source media="(min-width:1200px )" srcset="./images/meag-box-pc.png">
                                 <source media="(min-width:768px )" srcset="./images/meag-box-t.png">
                                 <img src="./images/meag-box-m.png" alt="메가박스">
-                            </picture>
-                            
+                            </picture>                            
                         </div>
-                        <div class="slider-txt">
+                        <div class="slider-txt" data-aos="fade-left">
                             <p>MEGABOX</p>
                             <p>영화 관람 사이트 리뉴얼<br>(포트폴리오용)</p>
                             <button><a href="https://github.com/jokyungwha/mega-box" target="_blank">사이트 바로가기</a></button>
@@ -959,10 +975,12 @@
         <section class="sec" id="contact">
             <div class="container">
                 <h2>contact</h2>
-                <div class="img-box">
+                <div class="img-box" data-aos="fade-up"
+                data-aos-duration="3000">
                     <img class="profile" src="./images/me02.jpg" alt="me02">
                 </div>
-                <article class="profile-txt">
+                <article class="profile-txt" data-aos="fade-down"
+                data-aos-duration="3000">
                     <p>"다양한 변화를 자연스럽게 따라갈 수 있는<br>웹 퍼블리셔, 조경화가 되겠습니다."</p>
                     <p>포트폴리오를 봐주셔서 감사합니다.<br>저에 대해 더 궁금하신 사항이 있다면 언제든 연락주세요!</p>
                 <ul class="profile-icon">
